@@ -1,0 +1,13 @@
+<h3>Recipe Items</h3>
+<div style="border: 2px solid black">
+    <a [routerLink]='[index]' routerLinkActive='active-link' class="list-group-item clearfix" ><!-- (click)='onSelected()' -->
+      <div class="pull-left">
+        <div class="list-group-item-heading">{{recipe.name}}</div>
+        <p class="list-group-item-text">{{recipe.description}}</p>
+      </div>
+      <span class="pull-right">
+        <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive" style="max-height: 50px;">
+      </span>
+    </a>
+</div>
+

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="btn btn-danger">Danger</button>
+            <a routerLink = '/' class="navbar-brand">Recipe Book</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive ='active-link'><a routerLink = '/recipes'>&nbsp;Recipe List</a></li>
+                <li routerLinkActive ='active-link'><a routerLink = '/shopping-list'>&nbsp;Shopping List</a></li>
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" role="button" data-toggle="dropdown">&nbsp;Manage</a>
+                    <ul class="dropdown-menu">
+                        <li><a>Save data</a></li>
+                        <li><a>Fetch data</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
