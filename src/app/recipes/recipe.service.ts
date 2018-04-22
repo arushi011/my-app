@@ -2,6 +2,7 @@ import { Recipe } from './recipe.model';
 import { Injectable } from '@angular/core'; // EventEmitter, Output,
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shoppingList.service';
+import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class RecipeService {
     private recipes: Recipe[] = [
@@ -15,8 +16,11 @@ export class RecipeService {
 
     // @Output() recipeSelected = new EventEmitter<Recipe>();
 
+    recipeChanged = new Subject<Recipe[]>();
+
     getRecipes() { // used by recipe-list component
         return this.recipes.slice();
+        // were giving copy of recipes to list component
     }
 
     getRecipeDetails(index: number) { // used to put data in recipe details. because it has subscribed to params
@@ -29,5 +33,18 @@ export class RecipeService {
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
         // console.log(ingredients);
         this.shoppingListService.addIngredientFromRecipe(ingredients);
+    }
+    addRecipe(newRecipe: Recipe) {
+        this.recipes.push(newRecipe);
+        this.recipeChanged.next(this.recipes.slice());
+
+    }
+    updateRecipe(index: number, newRecipe: Recipe) {
+        console.log('in service updateRecipe');
+        console.log(index);
+        this.recipes[index] = newRecipe;
+        console.log(newRecipe);
+        console.log(this.recipes);
+        this.recipeChanged.next(this.recipes.slice());
     }
 }
