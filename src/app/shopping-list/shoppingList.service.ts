@@ -12,10 +12,22 @@ export class ShoppingListService {
     getIngredients() {
         return this.ingredients.slice();
     }
+    getIngredientsForEdit(index: number) {
+        return this.ingredients.slice()[index];
+    }
     addIngredient(ingredient: Ingredient) {
         console.log(ingredient);
         this.ingredients.push(ingredient);
         this.ingredientsChanged.next(this.ingredients.slice()); // it was emit
+    }
+
+    updateIngredient(index: number, ingredient: Ingredient) {
+        this.ingredients[index] = ingredient;
+        this.ingredientsChanged.next(this.ingredients.slice());
+    }
+    deleteIngredient(index: number) {
+        this.ingredients.splice(index, 1);
+        this.ingredientsChanged.next(this.ingredients.slice());
     }
     addIngredientFromRecipe(ingredients: Ingredient[]) {
         this.ingredients.push.apply(this.ingredients, ingredients);
