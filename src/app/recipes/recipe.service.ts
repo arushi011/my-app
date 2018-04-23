@@ -40,11 +40,11 @@ export class RecipeService {
 
     }
     updateRecipe(index: number, newRecipe: Recipe) {
-        console.log('in service updateRecipe');
-        console.log(index);
         this.recipes[index] = newRecipe;
-        console.log(newRecipe);
-        console.log(this.recipes);
+        this.recipeChanged.next(this.recipes.slice());
+    }
+    deleteRecipe(index: number) {
+        this.recipes.splice(index, 1);
         this.recipeChanged.next(this.recipes.slice());
     }
 }
