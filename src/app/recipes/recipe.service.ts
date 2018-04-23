@@ -18,6 +18,11 @@ export class RecipeService {
 
     recipeChanged = new Subject<Recipe[]>();
 
+    setRecipes(recipes: Recipe[]) {
+        this.recipes.splice(0, this.recipes.length);
+        this.recipes.push.apply(this.recipes, recipes);
+        this.recipeChanged.next(this.recipes.slice());
+    }
     getRecipes() { // used by recipe-list component
         return this.recipes.slice();
         // were giving copy of recipes to list component
