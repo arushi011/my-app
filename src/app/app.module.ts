@@ -21,9 +21,10 @@ import { ShoppingListService } from './shopping-list/shoppingList.service';
 // import { SigninComponent } from './auth/signin/signin.component';
 import { DataStorageService } from './shared/data-storage.service';
 import { AuthService } from './auth/auth.service';
-import { RecipeModule } from './recipes/recipe.module';
+// import { RecipeModule } from './recipes/recipe.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AuthModule } from './auth/auth.module';
     // ShoppingEditComponent,
     // RecipeItemsComponent,
     BetterHighlightDirective,
+    HomeComponent,
     // RecipeStartComponent,
     // RecipeEditComponent,
     // SignupComponent,
@@ -46,10 +48,10 @@ import { AuthModule } from './auth/auth.module';
     // FormsModule,
     // ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    RecipeModule,
+    // RecipeModule,
     ShoppingListModule,
-    AuthModule
+    AuthModule,
+    AppRoutingModule,
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService],
   bootstrap: [AppComponent]
