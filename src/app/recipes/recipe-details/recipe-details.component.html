@@ -1,36 +1,35 @@
-<h3>Recipe Details</h3>
-<div style="border: 2px solid black">
-<div class="row">
-  <div class="col-xs-12">
-    <img [src]="recipe.imagePath" style="max-height:300px" alt="{{recipe.name}}" class="img-responsive">
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <h3>{{recipe.name}}</h3>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Manage Recipe</button>
-      <div class="dropdown-menu">
-        <a (click) = "addIngredients()">Add ingredients to shopping List</a>
-        <a (click) = "onEditRecipe()">Edit recipe</a>
-        <a (click) = "onDeleteRecipe()">Delete recipe</a>
+<div class="container">
+<br>
+<div class="container clearfix">
+  <div class="col-sm-12">
+      <div class="float-left">
+        <h4>{{recipe.name}}</h4>
       </div>
-    </div>
+      <div class="float-right">
+        <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Manage Recipe</button>
+        <ul class="dropdown-menu">
+          <li><a (click) = "addIngredients()">Add ingredients to shopping List</a></li>
+          <li><a (click) = "onEditRecipe()">Edit recipe</a></li>
+          <li><a (click) = "onDeleteRecipe()">Delete recipe</a></li>
+        </ul>
+      </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    Description
-    <hr/>
+<hr/>
+<div class="container">
+    <div class="col-sm-12">
+      <img [src]="recipe.imagePath" style="max-height:300px" alt="{{recipe.name}}" class="img-responsive">
+    </div>
+</div>
+<br>
+<div class="container">
+  <div class="col-sm-12">
       {{recipe.description}}
   </div>
 </div>
-<div class="row">
-    <div class="col-xs-12">
+<br>
+<div class="container">
+    <div class="col-sm-12">
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients ">
           {{ingredient.name}} ({{ingredient.amount}})

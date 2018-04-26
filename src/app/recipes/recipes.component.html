@@ -1,9 +1,8 @@
-<h2>Recipes</h2>
-<div class="row" style="border: 2px solid black">
-  <div class="col-md-5">
+<div class="clearfix">
+  <div class="col-sm-5 float-left">
     <app-recipe-list ></app-recipe-list> <!-- (recipeWasSelected)='selectedRecipe = $event' -->
   </div>
-  <div class="col-md-7">
+  <div class="col-sm-7 float-left">
     <router-outlet></router-outlet>
     <!-- <app-recipe-details
     *ngIf='selectedRecipe; else infoText'

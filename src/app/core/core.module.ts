@@ -6,6 +6,7 @@ import { ShoppingListService } from '../shopping-list/shoppingList.service';
 import { RecipeService } from '../recipes/recipe.service';
 import { DataStorageService } from '../shared/data-storage.service';
 import { AuthService } from '../auth/auth.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import { AuthService } from '../auth/auth.service';
         HomeComponent
     ],
     imports: [
+        CommonModule,
         AppRoutingModule
     ],
     exports: [

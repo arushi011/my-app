@@ -1,16 +1,18 @@
-<div class="row">
-  <div class="col-xs-12">
+<div class="container">
+  <br>
+  <div class="col-sm-12">
     <button class="btn btn-success" (click)='onNewRecipe()'>New Recipe</button>
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col-xs-12">
+<div class="container">
+  <div class="col-sm-12">
     <!-- pass the items of recipe array in recipe-list component to child component recipe-items -->
       <app-recipe-items 
       *ngFor = "let recipeEl of recipes; let i = index"
       [recipe] = 'recipeEl'
-      [index] = 'i' >
+      [index] = 'i' 
+      class="list-group">
       <!-- (recipeSelected)='onRecipeSelected(recipeEl)'> -->
       <!-- [] se property and () se event bind hote h -->
       </app-recipe-items>

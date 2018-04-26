@@ -6,10 +6,12 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class RecipeService {
     private recipes: Recipe[] = [
-        new Recipe('Pizza', 'Pizza Recipe Description',
+        new Recipe('Pizza',
+        'Pizza Recipe Description Lorem ipsum dolor sit amet,impedit tincidunt voluptaria qui te. Cetero ullamcorper eu nam.',
         'http://foodportfolio.com/wordpress/wp-content/pittsburgh-food-photographer/Pizza-Food-Photography.jpg',
         [new Ingredient('cheeze', 5), new Ingredient('pepperoni', 20)]),
-        new Recipe('Spaghetti', 'Spaghetti Recipe Description',
+        new Recipe('Spaghetti',
+        'Spaghetti Recipe Description Lorem ipsum dolor sit amet,impedit tincidunt voluptaria qui te. Cetero ullamcorper eu nam.',
         'https://gasztrocoach.hu/wp-content/uploads/2018/03/husgomboc2-1170x658.jpg',
         [new Ingredient('spaghetti', 20), new Ingredient('meatballs', 10), new Ingredient('basil', 5)])
       ]; // recipe[] means declaring an array of recipe type
